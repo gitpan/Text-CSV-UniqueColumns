@@ -9,7 +9,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 
-our $VERSION = '0.01';
+our $VERSION = '0.2';
 
 my (%headerHash, @cleanup);
 
