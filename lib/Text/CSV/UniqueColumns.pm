@@ -9,7 +9,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 my (%headerHash, @cleanup);
 
@@ -132,7 +132,6 @@ sub cleanUp {
 
 
 __END__
-# Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
@@ -142,41 +141,36 @@ Text::CSV::UniqueColumns - Perl extension for finding columns with unique values
 
   use Text::CSV::UniqueColumns;
   
-  my $Obj = new UniqueColumns('check.csv');
-  my $list = $Obj->getColumnList();
-  my $Int = $Obj->checkUniq('col1');
-  my $Uniq = $Obj->getUniqCols();
+  --Create an object of the module
+  $Obj = new UniqueColumns('check.csv');
+  
+  --To get list of columns
+  $list = $Obj->getColumnList();
+  
+  --To check if column 'col1' has unique values.
+  $Int = $Obj->checkUniq('col1');
+  
+  --To get a list of columns(comma seperated) having unique values.
+  #Returns 1 if unique, 0 if not
+  $Uniq = $Obj->getUniqCols();
 
 
 =head1 DESCRIPTION
 
-Helps in finding out columns with unique values of a CSV file.
+find columns with unique values of a CSV file.
 
-getColumnList - list all columns name 
+Functions and their usage -- 
+
+getColumnList - list all columns name in a csv 
 checkUniq  - Check if one('Col1') or more combination of column('Col1,Col2,Col3') values are unique 
 getUniqCols - give list of unique columns in an CSV.
 
-*Module works on UNIX boxes only.
-=head2 EXPORT
+**** Module works on UNIX boxes only ****
 
-None by default.
-
-
-
-=head1 SEE ALSO
-
-Mention other useful documentation such as the documentation of
-related modules or operating system documentation (such as man pages
-in UNIX), or any relevant external documentation such as RFCs or
-standards.
-
-If you have a mailing list set up for your module, mention it here.
-
-If you have a web site set up for your module, mention it here.
 
 =head1 AUTHOR
 
-Tushar, E<lt>tushar@E<gt>
+Tushar, E<lt>tushar@cpan.org<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
